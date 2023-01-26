@@ -12,27 +12,26 @@ function CardRow({data, time}: Props) {
 
     const currentDay = 2
 
-    return(
-        <div className="CardRow flex">
+    return (
+        <div className="CardRow flex justify-center">
             {
-                data.map(
-                    (data, index) => {
-                        return (
-                            <div
-                                className={currentDay === index ? 'bg-gradient-to-r from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
-                                key={index}
-                            >
-                                <ScheduleCard
-                                    data={data}
-                                    time={time}
-                                />
-                            </div>
-                        )
-                    }
-                )
+                data.map((data, index: number) => {
+                    return (
+                        <div
+                            className={currentDay === index ? 'bg-gradient-to-r from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
+                            key={index}
+                        >
+                            <ScheduleCard
+                                data={data}
+                                time={time}
+                            />
+                        </div>
+                    )
+                })
             }
         </div>
     )
 }
+
 export default CardRow
 

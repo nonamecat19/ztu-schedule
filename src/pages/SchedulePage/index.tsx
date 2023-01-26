@@ -25,7 +25,7 @@ function SchedulePage({}: Props) {
     ]
 
     return (
-        <div className="SchedulePage">
+        <div className="SchedulePage bg-bg min-h-screen">
             {
                 firstWeek.map((data: RowType, index: number) => {
                     return (

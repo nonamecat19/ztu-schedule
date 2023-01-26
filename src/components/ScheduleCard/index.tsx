@@ -15,7 +15,7 @@ function ScheduleCard({data, time}: Props) {
     const nonCurrentGroup: number = 1
 
     return (
-        <Card css={{p: "$5", m: '$4', w: "300px", h: '170px', border: 'none'}}>
+        <Card css={{p: "$5", m: '$4', w: "300px", h: '170px', border: 'none', background: '#171717'}}>
             <CardContent
                 data={data[currentGroup]}
                 time={time}

@@ -21,21 +21,20 @@ module.exports = {
                 },
             },
             colors: {
-                bg: "#0f1114",
+                bg: "#090909",
                 ui: "#17191e",
                 text: "#ffffff",
                 active: "#ffffff",
-                another: "rgba(255,255,255,0.11)",
+                another: "rgba(255,255,255,0.04)",
                 nonactive: "#363637",
                 selected: "#2e2e30",
                 card: "#202228",
-                lecture: "#949dff",
-                consult: "#949dff",
-                laboratory: "#ff7f96",
-                practice: "#ff7f96",
+                lecture: "#3b0d5e",
+                consult: "#3b0d5e",
+                laboratory: "#6e1523",
+                practice: "#6e1523",
                 currentDayCenter: "#471175",
-                currentDayEdges: "rgba(126,34,206,0.07)",
-
+                currentDayEdges: "rgba(58,8,93,0.55)",
             }
         }
     },
