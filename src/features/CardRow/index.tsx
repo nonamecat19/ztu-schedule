@@ -19,7 +19,7 @@ function CardRow({data, time}: Props) {
                     (data, index) => {
                         return (
                             <div
-                                className={currentDay === index ? 'bg-currentDay' : ''}
+                                className={currentDay === index ? 'bg-gradient-to-r from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
                                 key={index}
                             >
                                 <ScheduleCard

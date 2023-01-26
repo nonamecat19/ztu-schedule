@@ -24,7 +24,6 @@ function SchedulePage({}: Props) {
         '18:00-19:20'
     ]
 
-
     return (
         <div className="SchedulePage">
             {
@@ -37,9 +36,7 @@ function SchedulePage({}: Props) {
                         />
                     )
                 })
-
             }
-
         </div>
     )
 }
