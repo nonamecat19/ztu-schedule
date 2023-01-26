@@ -4,4 +4,6 @@ export type CardType = {
     teacher: string,
     room: string,
     time: string,
+    disabled: boolean,
+    other: boolean
 }

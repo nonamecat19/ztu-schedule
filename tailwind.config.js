@@ -25,6 +25,7 @@ module.exports = {
             ui: "#17191e",
             text: "#ffffff",
             active: "#ffffff",
+            another: "rgba(255,255,255,0.11)",
             nonactive: "#363637",
             selected: "#2e2e30",
             card: "#202228",
