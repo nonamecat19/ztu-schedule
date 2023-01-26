@@ -1,8 +1,8 @@
 import React from 'react'
 import './SchedulePage.module.scss'
 import GetCards from "../../shared/mocks/cards";
-import CardRow from "../../features/CardRow";
-import {GroupDataType, RowType, WeekType} from "../../shared/types/card/card";
+import CardColumn from "../../features/CardColumn";
+import {GroupDataType, ColumnType, WeekType} from "../../shared/types/card/card";
 
 interface Props {
 
@@ -14,26 +14,23 @@ function SchedulePage({}: Props) {
 
     let firstWeek: WeekType = group[0]
 
-    const timeLessons = [
-        '8:30-9:50',
-        '10:00-11:20',
-        '11:40-13:00',
-        '13:30-14:50',
-        '15:00-16:20',
-        '16:30-17:50',
-        '18:00-19:20'
-    ]
+
+    let currentDay = 2
 
     return (
-        <div className="SchedulePage bg-bg min-h-screen">
+        <div className="SchedulePage bg-bg min-h-screen flex justify-center">
             {
-                firstWeek.map((data: RowType, index: number) => {
+                firstWeek.map((data: ColumnType, index: number) => {
                     return (
-                        <CardRow
+                        <div
+                            className={currentDay === index ? 'bg-gradient-to-r from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
                             key={index}
-                            data={data}
-                            time={timeLessons[index]}
-                        />
+                        >
+                            <CardColumn
+                                key={index}
+                                data={data}
+                            />
+                        </div>
                     )
                 })
             }

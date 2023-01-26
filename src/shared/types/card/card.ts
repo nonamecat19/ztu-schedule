@@ -12,8 +12,8 @@ export type LessonType = NonEmptyLessonType | 0
 
 export type CardType = [LessonType, LessonType]
 
-export type RowType = [CardType, CardType, CardType, CardType, CardType]
+export type ColumnType = [CardType, CardType, CardType, CardType, CardType, CardType, CardType]
 
-export type WeekType = [RowType, RowType, RowType, RowType, RowType, RowType, RowType]
+export type WeekType = [ColumnType, ColumnType, ColumnType, ColumnType, ColumnType]
 
 export type GroupDataType = [WeekType, WeekType]
