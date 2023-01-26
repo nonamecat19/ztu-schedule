@@ -5,9 +5,10 @@ import {RowType} from "../../shared/types/card/card";
 
 interface Props {
     data: RowType
+    time: string
 }
 
-function CardRow({data}: Props) {
+function CardRow({data, time}: Props) {
 
     const currentDay = 2
 
@@ -23,6 +24,7 @@ function CardRow({data}: Props) {
                             >
                                 <ScheduleCard
                                     data={data}
+                                    time={time}
                                 />
                             </div>
                         )

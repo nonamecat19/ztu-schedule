@@ -8,13 +8,14 @@ import Lesson from '../Lesson';
 
 interface Props {
     data: LessonType
+    time: string
 }
 
-function CardContent({data}: Props) {
+function CardContent({data, time}: Props) {
     if (typeof data === 'number')
         return <></>
 
-    const {type, subject, teacher, room, time} = data
+    const {type, subject, teacher, room} = data
     return (
         <>
             <div className="flex justify-between items-center">

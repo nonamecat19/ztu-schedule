@@ -6,16 +6,20 @@ import CardContent from '../CardContent';
 
 interface Props {
     data: CardType
+    time: string
 }
 
-function ScheduleCard({data}: Props) {
+function ScheduleCard({data, time}: Props) {
 
     const currentGroup: number = 0
     const nonCurrentGroup: number = 1
 
     return (
         <Card css={{p: "$5", m: '$4', w: "300px", h: '170px', border: 'none'}}>
-            <CardContent data={data[currentGroup]}/>
+            <CardContent
+                data={data[currentGroup]}
+                time={time}
+            />
             {
                 typeof data[nonCurrentGroup] === 'number' || (
                     <Tooltip
