@@ -29,9 +29,10 @@ module.exports = {
             nonactive: "#363637",
             selected: "#2e2e30",
             card: "#202228",
-            lec: "#949dff",
-            lab: "#f6b382",
-            pra: "#ff7f96",
+            lecture: "#949dff",
+            consult: "#949dff",
+            laboratory: "#ff7f96",
+            practice: "#ff7f96",
         }
     },
     plugins: [

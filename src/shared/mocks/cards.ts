@@ -3,12 +3,12 @@ import {CardType} from "../types/card/card";
 const GetCards = (): CardType[] => {
     return [
         {
-            type: 'pra',
+            type: 'lec',
             subject: 'Frontend-розробка',
             teacher: 'Фуріхата Д.В.',
             room: 'ОЦ 1',
             time: '10:00 - 11:30',
-            disabled: true,
+            disabled: false,
             other: true,
         },
         {
@@ -26,11 +26,11 @@ const GetCards = (): CardType[] => {
             teacher: 'Чижмотря О.В.',
             room: '653',
             time: '10:00 - 11:30',
-            disabled: true,
+            disabled: false,
             other: false,
         },
         {
-            type: 'pra',
+            type: 'lab',
             subject: 'Backend-розробка',
             teacher: 'Чижмотря О.Г.',
             room: '444',
@@ -39,12 +39,12 @@ const GetCards = (): CardType[] => {
             other: true,
         },
         {
-            type: 'pra',
+            type: 'con',
             subject: 'Фізкультура',
             teacher: 'Курилло Т.В.',
             room: '123',
             time: '10:00 - 11:30',
-            disabled: true,
+            disabled: false,
             other: true,
         },
     ]

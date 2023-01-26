@@ -4,6 +4,7 @@ import {Card, Text, Tooltip} from "@nextui-org/react";
 import {FaMapMarkerAlt} from "react-icons/fa";
 import {BsFillPersonFill} from "react-icons/bs";
 import {CardType} from "../../shared/types/card/card";
+import LessonType from "../LessonType";
 
 interface Props extends CardType {
 
@@ -16,9 +17,7 @@ function ScheduleCard({type, subject, teacher, room, time, disabled, other}: Pro
                 disabled || (
                     <>
                         <div className="flex justify-between items-center">
-                            <Text className='bg-lec px-4 rounded-md text-bg text-md w-16 text-center'>
-                                {type}
-                            </Text>
+                            <LessonType type={type} />
                             <Text className='rounded-md text-md text-center'>
                                 {time}
                             </Text>
