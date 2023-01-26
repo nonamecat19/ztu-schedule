@@ -12,23 +12,21 @@ interface Props extends CardType {
 
 function ScheduleCard({type, subject, teacher, room, time, disabled, other}: Props) {
     return (
-        <Card css={{p: "$9", m: '$6', w: "300px", h: '170px', border: 'none'}}>
+        <Card css={{p: "$5", m: '$4', w: "300px", h: '170px', border: 'none'}}>
             {
                 disabled || (
                     <>
                         <div className="flex justify-between items-center">
                             <LessonType type={type} />
-                            <Text className='rounded-md text-md text-center'>
+                            <Text className='rounded-md text-md text-center mr-2'>
                                 {time}
                             </Text>
                         </div>
-
                         <div className="flex justify-center items-center text-center h-[60px]">
                             <Text className='text-xl'>
                                 {subject}
                             </Text>
                         </div>
-
                         <div className="flex">
                             <div className='mt-[6px] mr-[6px]'>
                                 <BsFillPersonFill/>
