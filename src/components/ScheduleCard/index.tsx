@@ -1,49 +1,23 @@
 import React from 'react'
 import './ScheduleCard.module.scss'
-import {Card, Text, Tooltip} from "@nextui-org/react";
-import {FaMapMarkerAlt} from "react-icons/fa";
-import {BsFillPersonFill} from "react-icons/bs";
+import {Card, Tooltip} from "@nextui-org/react";
 import {CardType} from "../../shared/types/card/card";
-import LessonType from "../LessonType";
+import CardContent from '../CardContent';
 
-interface Props extends CardType {
-
+interface Props {
+    data: CardType
 }
 
-function ScheduleCard({type, subject, teacher, room, time, disabled, other}: Props) {
+function ScheduleCard({data}: Props) {
+
+    const currentGroup: number = 0
+    const nonCurrentGroup: number = 1
+
     return (
         <Card css={{p: "$5", m: '$4', w: "300px", h: '170px', border: 'none'}}>
+            <CardContent data={data[currentGroup]}/>
             {
-                disabled || (
-                    <>
-                        <div className="flex justify-between items-center">
-                            <LessonType type={type} />
-                            <Text className='rounded-md text-md text-center mr-2'>
-                                {time}
-                            </Text>
-                        </div>
-                        <div className="flex justify-center items-center text-center h-[60px]">
-                            <Text className='text-xl'>
-                                {subject}
-                            </Text>
-                        </div>
-                        <div className="flex">
-                            <div className='mt-[6px] mr-[6px]'>
-                                <BsFillPersonFill/>
-                            </div>
-                            <Text>{teacher}</Text>
-                        </div>
-                        <div className="flex">
-                            <div className='mt-[6px] mr-[6px]'>
-                                <FaMapMarkerAlt/>
-                            </div>
-                            <Text>{room}</Text>
-                        </div>
-                    </>
-                )
-            }
-            {
-                other && (
+                typeof data[nonCurrentGroup] === 'number' || (
                     <Tooltip
                         className='bg-another rounded-xl absolute w-12 h-7 bottom-1.5 right-1.5'
                         content="В цей час є пара в іншої підгрупи"

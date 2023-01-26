@@ -1,12 +1,12 @@
 import React from 'react'
-import './LessonType.module.scss'
+import './Lesson.module.scss'
 import {Text} from "@nextui-org/react";
 
 interface Props {
     type: 'lec' | 'lab' | 'pra' | 'con',
 }
 
-function LessonType({type}: Props) {
+function Lesson({type}: Props) {
 
     let text: {
         [key: string]: [string, string]
@@ -23,5 +23,5 @@ function LessonType({type}: Props) {
         </Text>
     )
 }
-export default LessonType
+export default Lesson
 

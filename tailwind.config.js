@@ -33,6 +33,7 @@ module.exports = {
             consult: "#949dff",
             laboratory: "#ff7f96",
             practice: "#ff7f96",
+            currentDay: "rgba(255,255,255,0.05)",
         }
     },
     plugins: [

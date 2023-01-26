@@ -1,28 +1,36 @@
 import React from 'react'
 import './SchedulePage.module.scss'
-import ScheduleCard from "../../components/ScheduleCard";
 import GetCards from "../../shared/mocks/cards";
+import CardRow from "../../features/CardRow";
+import {GroupDataType, RowType, WeekType} from "../../shared/types/card/card";
+
 interface Props {
 
 }
 
 function SchedulePage({}: Props) {
-    return(
+
+    let group: GroupDataType = GetCards()
+
+    let firstWeek: WeekType = group[0]
+
+    return (
         <div className="SchedulePage">
             {
-                GetCards().map(
-                    (data, index) => {
-                        return (
-                            <ScheduleCard
-                                key={index}
-                                {...data}
-                            />
-                        )
-                    }
-                )
+                firstWeek.map((data: RowType, index: number) => {
+                    return (
+                        <CardRow
+                            key={index}
+                            data={data}
+                        />
+                    )
+                })
+
             }
+
         </div>
     )
 }
+
 export default SchedulePage
 
