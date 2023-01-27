@@ -3,6 +3,7 @@ import './ScheduleCard.module.scss'
 import {Tooltip} from "@nextui-org/react";
 import {CardType} from "../../shared/types/card/card";
 import CardContent from '../CardContent';
+import {useScheduleStore} from "../../store/store";
 
 interface Props {
     data: CardType
@@ -11,9 +12,9 @@ interface Props {
 
 function ScheduleCard({data, time}: Props) {
 
-    const currentGroup: number = 0
-    const nonCurrentGroup: number = 1
-
+    // @ts-ignore
+    // const currentGroupFirst = useScheduleStore<boolean>(state => state.currentGroupFirst)
+    const currentGroupFirst = useScheduleStore<boolean>(state => state['currentGroupFirst'])
     return (
         <div
             className='bg-[#171717] m-2 rounded-2xl relative
@@ -24,11 +25,11 @@ function ScheduleCard({data, time}: Props) {
             '
         >
             <CardContent
-                data={data[currentGroup]}
+                data={data[currentGroupFirst ? 0 : 1]}
                 time={time}
             />
             {
-                typeof data[nonCurrentGroup] === 'number' || (
+                typeof data[currentGroupFirst ? 1 : 0] === 'number' || (
                     <Tooltip
                         className='bg-another rounded-xl absolute w-12 h-7 bottom-1.5 right-1.5'
                         content="В цей час є пара в іншої підгрупи"
