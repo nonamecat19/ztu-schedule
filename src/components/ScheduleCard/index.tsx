@@ -1,6 +1,6 @@
 import React from 'react'
 import './ScheduleCard.module.scss'
-import {Card, Tooltip} from "@nextui-org/react";
+import {Tooltip} from "@nextui-org/react";
 import {CardType} from "../../shared/types/card/card";
 import CardContent from '../CardContent';
 
@@ -15,7 +15,14 @@ function ScheduleCard({data, time}: Props) {
     const nonCurrentGroup: number = 1
 
     return (
-        <Card css={{p: "$5", m: '$4', w: "300px", h: '170px', border: 'none', background: '#171717'}}>
+        <div
+            className='bg-[#171717] m-2 rounded-2xl relative
+            2xl:h-[170px] 2xl:w-[290px] 2xl:p-4
+             xl:h-[160px]  xl:w-[18.5vw]  xl:p-4
+             lg:h-[130px]  lg:w-[18.5vw]  lg:px-1.5 lg:py-1
+
+            '
+        >
             <CardContent
                 data={data[currentGroup]}
                 time={time}
@@ -29,7 +36,8 @@ function ScheduleCard({data, time}: Props) {
                     />
                 )
             }
-        </Card>
+        </div>
+
     )
 }
 

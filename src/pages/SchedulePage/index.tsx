@@ -18,12 +18,12 @@ function SchedulePage({}: Props) {
     let currentDay = 2
 
     return (
-        <div className="SchedulePage bg-bg min-h-screen flex justify-center">
+        <div className="SchedulePage bg-bg max-h-screen flex justify-center">
             {
                 firstWeek.map((data: ColumnType, index: number) => {
                     return (
                         <div
-                            className={currentDay === index ? 'bg-gradient-to-r from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
+                            className={currentDay === index ? 'bg-gradient-to-b from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
                             key={index}
                         >
                             <CardColumn

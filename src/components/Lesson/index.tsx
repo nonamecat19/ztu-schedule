@@ -18,7 +18,13 @@ function Lesson({type}: Props) {
     }
     const [typeText, typeClass] = text[type]
     return(
-        <Text className={`${typeClass} px-4 rounded-lg text-md w-32 text-center`}>
+        <Text
+            className={`${typeClass} rounded-lg text-center 
+            xl:px-4 xl:w-32 xl:text-md
+            lg:px-2 lg:w-28 lg:text-md
+            `}
+
+        >
             {typeText}
         </Text>
     )

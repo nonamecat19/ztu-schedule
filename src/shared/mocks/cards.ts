@@ -16,7 +16,7 @@ const GetCards = (): GroupDataType => {
                     },
                     {
                         type: 'lec',
-                        subject: 'Frontend-розробка',
+                        subject: 'Технології розробки додатків .NET Core',
                         teacher: 'Фуріхата Д.В.',
                         room: 'ОЦ 1',
                         time: '10:00 - 11:30',
@@ -209,7 +209,7 @@ const GetCards = (): GroupDataType => {
                 [
                     {
                         type: 'lab',
-                        subject: 'Backend-розробка',
+                        subject: 'Технології розробки додатків .NET Core',
                         teacher: 'Чижмотря О.Г.',
                         room: '444',
                         time: '10:00 - 11:30',
@@ -339,7 +339,7 @@ const GetCards = (): GroupDataType => {
                 [
                     {
                         type: 'con',
-                        subject: 'Фізкультура',
+                        subject: 'Технології розробки додатків .NET Core',
                         teacher: 'Курилло Т.В.',
                         room: '123',
                         time: '10:00 - 11:30',
@@ -559,7 +559,7 @@ const GetCards = (): GroupDataType => {
                 [
                     {
                         type: 'con',
-                        subject: 'Фізкультура',
+                        subject: 'Технології розробки додатків .NET Core',
                         teacher: 'Курилло Т.В.',
                         room: '123',
                         time: '10:00 - 11:30',
@@ -851,7 +851,7 @@ const GetCards = (): GroupDataType => {
                 [
                     {
                         type: 'con',
-                        subject: 'Фізкультура',
+                        subject: 'Технології розробки додатків .NET Core',
                         teacher: 'Курилло Т.В.',
                         room: '123',
                         time: '10:00 - 11:30',

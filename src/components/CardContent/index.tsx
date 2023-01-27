@@ -20,26 +20,49 @@ function CardContent({data, time}: Props) {
         <>
             <div className="flex justify-between items-center">
                 <Lesson type={type} />
-                <Text className='rounded-md text-md text-center mr-2'>
+                <Text className='rounded-md  text-center mr-2
+                    2xl:text-md
+                    xl:text-sm
+                    lg:text-xs
+                '>
                     {time}
                 </Text>
             </div>
             <div className="flex justify-center items-center text-center h-[60px]">
-                <Text className='text-xl'>
+                <Text className='
+                    2xl:text-xl
+                    xl:text-lg
+                '>
                     {subject}
                 </Text>
             </div>
             <div className="flex">
-                <div className='mt-[6px] mr-[6px]'>
+                <div className='2xl:mt-[6px] xl:mt-[2px] mr-[6px]'>
                     <BsFillPersonFill/>
                 </div>
-                <Text>{teacher}</Text>
+                <Text
+                    className='
+                    2xl:text-md
+                    xl:text-sm
+                    lg:text-xs
+                    '
+                >
+                    {teacher}
+                </Text>
             </div>
             <div className="flex">
-                <div className='mt-[6px] mr-[6px]'>
+                <div className='2xl:mt-[6px] xl:mt-[2px] mr-[6px]'>
                     <FaMapMarkerAlt/>
                 </div>
-                <Text>{room}</Text>
+                <Text
+                    className='
+                    2xl:text-md
+                    xl:text-sm
+                    lg:text-xs
+                    '
+                >
+                    {room}
+                </Text>
             </div>
         </>
     )

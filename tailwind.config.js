@@ -33,8 +33,8 @@ module.exports = {
                 consult: "#3b0d5e",
                 laboratory: "#6e1523",
                 practice: "#6e1523",
-                currentDayCenter: "#471175",
-                currentDayEdges: "rgba(58,8,93,0.55)",
+                currentDayCenter: "#3a0d5e",
+                currentDayEdges: "rgba(58,8,93,0)",
             }
         }
     },
