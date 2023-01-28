@@ -4,6 +4,7 @@ import GetCards from "../../shared/mocks/cards";
 import CardColumn from "../../features/CardColumn";
 import {GroupDataType, ColumnType, WeekType} from "../../shared/types/card/card";
 import ScheduleHeader from "../../components/ScheduleHeader";
+import {isMobile} from "react-device-detect";
 
 interface Props {
 
@@ -18,7 +19,7 @@ function SchedulePage({}: Props) {
     const [mobile, setMobile] = useState<boolean>(false)
     const [mobileSelected, setMobileSelected] = useState<number>(1)
     const handleResize = () => {
-        setMobile(window.innerWidth < 1025)
+        setMobile(window.innerWidth < 1080)
     }
 
     useEffect(() => {
@@ -36,7 +37,7 @@ function SchedulePage({}: Props) {
 
             <div className="SchedulePage bg-bg max-h-screen flex justify-center">
                 {
-                    mobile
+                    mobile || isMobile
                         ?
                         <div
                             className={
