@@ -19,7 +19,7 @@ function SchedulePage({}: Props) {
     const [mobile, setMobile] = useState<boolean>(false)
     const [mobileSelected, setMobileSelected] = useState<number>(1)
     const handleResize = () => {
-        setMobile(window.innerWidth < 1080)
+        setMobile(window.innerWidth < 1025)
     }
 
     useEffect(() => {

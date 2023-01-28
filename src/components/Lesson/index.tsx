@@ -38,7 +38,7 @@ function Lesson({type}: Props) {
 
     return(
         <Text
-            className={isMobile ? classMobile : classMobile}
+            className={isMobile ? classMobile : classPC}
         >
             {typeText}
         </Text>

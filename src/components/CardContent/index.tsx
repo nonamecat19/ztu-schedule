@@ -30,17 +30,17 @@ function CardContent({data, time}: Props) {
         2xl:text-md
         xl:text-sm
         lg:text-xs
-           text-2xl
+           text-xl
     `
 
     const detailsMobile = `
         2xl:text-md
         xl:text-sm
         lg:text-4xl
-           text-2xl
+           text-xl
     `
 
-    const detailsItemPC = `flex w-[160px]`
+    const detailsItemPC = `flex w-[200px]`
 
     const detailsItemMobile = `flex w-[300px]`
 
@@ -85,31 +85,33 @@ function CardContent({data, time}: Props) {
     const subjectPC = `
         2xl:text-xl
         xl:text-lg
-        md:text-lg
-        text-4xl
+        lg:text-lg
+        md:text-2xl
+        sm:text-xl
+        text-lg
     `
 
     const subjectMobile = `
         2xl:text-xl
         xl:text-lg
         lg:text-7xl
-        md:text-lg
-        text-4xl
+        md:text-4xl
+        text-3xl
     `
 
     const subjectContainerPC = `
         flex justify-center items-center text-center 
         lg:h-[60px] 
-        md:h-[35px] 
+        md:h-[70px] 
         sm:h-[45px] 
-        h-[120px]
+        h-[40px]
     `
 
     const subjectContainerMobile = `
         flex justify-center items-center text-center 
         lg:h-[210px] 
-        md:h-[35px] 
-        sm:h-[45px] 
+        md:h-[130px] 
+        sm:h-[130px] 
         h-[120px]
     `
 
@@ -118,32 +120,32 @@ function CardContent({data, time}: Props) {
         <>
             <div className="flex justify-between items-center">
                 <Lesson type={type} />
-                <Text className={isMobile ? timeMobile : timeMobile}>
+                <Text className={isMobile ? timeMobile : timePC}>
                     {time}
                 </Text>
             </div>
-            <div className={isMobile ? subjectContainerMobile : subjectContainerMobile}>
-                <Text className={isMobile ? subjectMobile : subjectMobile}>
+            <div className={isMobile ? subjectContainerMobile : subjectContainerPC}>
+                <Text className={isMobile ? subjectMobile : subjectPC}>
                     {subject}
                 </Text>
             </div>
-            <div className={isMobile ? detailsContainerMobile : detailsContainerMobile}>
-                <div className={isMobile ? detailsItemMobile : detailsItemMobile}>
-                    <div className={isMobile ? detailsIconMobile : detailsIconMobile}>
-                        <BsFillPersonFill size={isMobile ? 22 : 16}/>
+            <div className={isMobile ? detailsContainerMobile : detailsContainerPC}>
+                <div className={isMobile ? detailsItemMobile : detailsItemPC}>
+                    <div className={isMobile ? detailsIconMobile : detailsIconPC}>
+                        <BsFillPersonFill/>
                     </div>
                     <Text
-                        className={isMobile ? detailsMobile : detailsMobile}
+                        className={isMobile ? detailsMobile : detailsPC}
                     >
                         {teacher}
                     </Text>
                 </div>
-                <div className={isMobile ? detailsItemMobile : detailsItemMobile}>
-                    <div className={isMobile ? detailsIconMobile : detailsIconMobile}>
-                        <FaMapMarkerAlt size={isMobile ? 22 : 16}/>
+                <div className={isMobile ? detailsItemMobile : detailsItemPC}>
+                    <div className={isMobile ? detailsIconMobile : detailsIconPC}>
+                        <FaMapMarkerAlt/>
                     </div>
                     <Text
-                        className={isMobile ? detailsMobile : detailsMobile}
+                        className={isMobile ? detailsMobile : detailsPC}
                     >
                         {room}
                     </Text>
