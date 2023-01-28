@@ -28,42 +28,47 @@ function CardContent({data, time}: Props) {
                     {time}
                 </Text>
             </div>
-            <div className="flex justify-center items-center text-center h-[60px]">
+            <div className="flex justify-center items-center text-center lg:h-[60px] md:h-[35px] sm:h-[45px] h-[60px]">
                 <Text className='
                     2xl:text-xl
                     xl:text-lg
+                    md:text-lg
+                    text-xl
                 '>
                     {subject}
                 </Text>
             </div>
-            <div className="flex">
-                <div className='2xl:mt-[6px] xl:mt-[2px] mr-[6px]'>
-                    <BsFillPersonFill/>
-                </div>
-                <Text
-                    className='
+            <div className="lg:flex-col flex ml-1">
+                <div className="flex w-[160px]">
+                    <div className='2xl:mt-[2px] xl:mt-[2px] lg:mt-[0px] md:mt-[6px] sm:mt-[6px] xs:mt-[6px] mt-[6px] mr-[6px]'>
+                        <BsFillPersonFill/>
+                    </div>
+                    <Text
+                        className='
                     2xl:text-md
                     xl:text-sm
                     lg:text-xs
                     '
-                >
-                    {teacher}
-                </Text>
-            </div>
-            <div className="flex">
-                <div className='2xl:mt-[6px] xl:mt-[2px] mr-[6px]'>
-                    <FaMapMarkerAlt/>
+                    >
+                        {teacher}
+                    </Text>
                 </div>
-                <Text
-                    className='
+                <div className="flex w-[160px]">
+                    <div className='2xl:mt-[2px] xl:mt-[2px] lg:mt-[0px] md:mt-[6px] sm:mt-[6px] xs:mt-[6px] mt-[6px] mr-[6px]'>
+                        <FaMapMarkerAlt/>
+                    </div>
+                    <Text
+                        className='
                     2xl:text-md
                     xl:text-sm
                     lg:text-xs
                     '
-                >
-                    {room}
-                </Text>
+                    >
+                        {room}
+                    </Text>
+                </div>
             </div>
+
         </>
     )
 }

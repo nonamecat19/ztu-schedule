@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './SchedulePage.module.scss'
 import GetCards from "../../shared/mocks/cards";
 import CardColumn from "../../features/CardColumn";
@@ -15,6 +15,17 @@ function SchedulePage({}: Props) {
     let firstWeek: WeekType = group[0]
 
 
+    const [mobile, setMobile] = useState<boolean>(false)
+    const [mobileSelected, setMobileSelected] = useState<number>(1)
+    const handleResize = () => {
+        setMobile(window.innerWidth < 1025)
+    }
+
+    useEffect(() => {
+        handleResize()
+        window.addEventListener("resize", handleResize)
+    })
+
     let currentDay = 2
 
     return (
@@ -25,19 +36,32 @@ function SchedulePage({}: Props) {
 
             <div className="SchedulePage bg-bg max-h-screen flex justify-center">
                 {
-                    firstWeek.map((data: ColumnType, index: number) => {
-                        return (
-                            <div
-                                className={currentDay === index ? 'bg-gradient-to-b from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
-                                key={index}
-                            >
-                                <CardColumn
+                    mobile
+                        ?
+                        <div
+                            className={
+                                currentDay === mobileSelected
+                                    ? 'bg-gradient-to-b from-currentDayEdges via-currentDayCenter to-currentDayEdges'
+                                    : ''
+                            }
+                        >
+                            <CardColumn
+                                data={firstWeek[mobileSelected]}
+                            />
+                        </div>
+                        :
+                        firstWeek.map((data: ColumnType, index: number) => {
+                            return (
+                                <div
+                                    className={currentDay === index ? 'bg-gradient-to-b from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
                                     key={index}
-                                    data={data}
-                                />
-                            </div>
-                        )
-                    })
+                                >
+                                    <CardColumn
+                                        data={firstWeek[mobileSelected]}
+                                    />
+                                </div>
+                            )
+                        })
                 }
             </div>
         </>

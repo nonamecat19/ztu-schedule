@@ -19,9 +19,12 @@ function ScheduleCard({data, time}: Props) {
     return (
         <div
             className='bg-[#171717] m-2 rounded-2xl relative
-            2xl:h-[170px] 2xl:w-[290px] 2xl:p-4
+            2xl:h-[170px] 2xl:w-[290px]  2xl:p-4
              xl:h-[160px]  xl:w-[18.5vw]  xl:p-4
              lg:h-[130px]  lg:w-[18.5vw]  lg:px-1.5 lg:py-1
+             md:h-[100px]  md:w-[50vw]    md:px-1.5 md:py-1
+             sm:h-[110px]  sm:w-[70vw]    sm:px-1.5 sm:py-1
+                h-[120px]     w-[85vw]       px-1.5    py-1
 
             '
         >
@@ -32,7 +35,7 @@ function ScheduleCard({data, time}: Props) {
             {
                 typeof data[currentGroupFirst ? 1 : 0] === 'number' || (
                     <Tooltip
-                        className='bg-another rounded-xl absolute w-12 h-7 bottom-1.5 right-1.5'
+                        className='bg-another rounded-xl absolute w-12 bottom-1.5 right-1.5 lg:h-7 h-6'
                         content="В цей час є пара в іншої підгрупи"
                         color="invert"
                     />

@@ -20,10 +20,12 @@ function Lesson({type}: Props) {
     return(
         <Text
             className={`${typeClass} rounded-lg text-center 
-            xl:px-4 xl:w-32 xl:text-md
-            lg:px-2 lg:w-28 lg:text-md
+            xl:w-32 xl:text-md
+            lg:w-28 lg:text-md
+            md:w-32 md:text-md
+            sm:w-32 sm:text-md
+               w-32    text-md
             `}
-
         >
             {typeText}
         </Text>
