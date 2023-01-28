@@ -12,9 +12,10 @@ interface Props {
 
 function ScheduleCard({data, time}: Props) {
 
-    // @ts-ignore
-    // const currentGroupFirst = useScheduleStore<boolean>(state => state.currentGroupFirst)
     const currentGroupFirst = useScheduleStore<boolean>(state => state['currentGroupFirst'])
+
+    useScheduleStore<void>(state => state['selectCurrentGroup'])
+
     return (
         <div
             className='bg-[#171717] m-2 rounded-2xl relative
