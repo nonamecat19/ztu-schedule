@@ -23,7 +23,7 @@ function ScheduleCard({data, time}: Props) {
         lg:h-[130px]  lg:w-[18.5vw]  lg:px-1.5 lg:py-1
         md:h-[100px]  md:w-[50vw]    md:px-1.5 md:py-1
         sm:h-[110px]  sm:w-[70vw]    sm:px-1.5 sm:py-1
-        h-[120px]     w-[85vw]       px-1.5    py-1
+           h-[210px]     w-[85vw]       px-1.5    py-1
     `
     const classMobile = `
         bg-[#171717] m-4 rounded-2xl relative
@@ -32,7 +32,7 @@ function ScheduleCard({data, time}: Props) {
          lg:h-[330px]  lg:w-[90vw]   lg:px-1.5 lg:py-1
          md:h-[250px]  md:w-[90vw]   md:px-1.5 md:py-1
          sm:h-[220px]  sm:w-[90vw]   sm:px-1.5 sm:py-1
-            h-[190px]     w-[90vw]      px-1.5    py-1
+            h-[210px]     w-[90vw]      px-1.5    py-1
     `
 
     return (
@@ -47,7 +47,7 @@ function ScheduleCard({data, time}: Props) {
             {
                 typeof data[currentGroupFirst ? 1 : 0] === 'number' || (
                     <Tooltip
-                        className='bg-another rounded-xl absolute w-12 bottom-1.5 right-1.5 lg:h-7 h-6'
+                        className='bg-another rounded-xl absolute w-12 bottom-1.5 right-1.5 lg:h-7 h-9'
                         content="В цей час є пара в іншої підгрупи"
                         color="invert"
                     />

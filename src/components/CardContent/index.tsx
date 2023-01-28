@@ -30,12 +30,14 @@ function CardContent({data, time}: Props) {
         2xl:text-md
         xl:text-sm
         lg:text-xs
+           text-2xl
     `
 
     const detailsMobile = `
         2xl:text-md
         xl:text-sm
         lg:text-4xl
+           text-2xl
     `
 
     const detailsItemPC = `flex w-[160px]`
@@ -84,7 +86,7 @@ function CardContent({data, time}: Props) {
         2xl:text-xl
         xl:text-lg
         md:text-lg
-        text-xl
+        text-4xl
     `
 
     const subjectMobile = `
@@ -92,7 +94,7 @@ function CardContent({data, time}: Props) {
         xl:text-lg
         lg:text-7xl
         md:text-lg
-        text-xl
+        text-4xl
     `
 
     const subjectContainerPC = `
@@ -100,7 +102,7 @@ function CardContent({data, time}: Props) {
         lg:h-[60px] 
         md:h-[35px] 
         sm:h-[45px] 
-        h-[60px]
+        h-[120px]
     `
 
     const subjectContainerMobile = `
@@ -108,7 +110,7 @@ function CardContent({data, time}: Props) {
         lg:h-[210px] 
         md:h-[35px] 
         sm:h-[45px] 
-        h-[60px]
+        h-[120px]
     `
 
     const {type, subject, teacher, room} = data
@@ -128,7 +130,7 @@ function CardContent({data, time}: Props) {
             <div className={isMobile ? detailsContainerMobile : detailsContainerMobile}>
                 <div className={isMobile ? detailsItemMobile : detailsItemMobile}>
                     <div className={isMobile ? detailsIconMobile : detailsIconMobile}>
-                        <BsFillPersonFill/>
+                        <BsFillPersonFill size={isMobile ? 22 : 16}/>
                     </div>
                     <Text
                         className={isMobile ? detailsMobile : detailsMobile}
@@ -138,7 +140,7 @@ function CardContent({data, time}: Props) {
                 </div>
                 <div className={isMobile ? detailsItemMobile : detailsItemMobile}>
                     <div className={isMobile ? detailsIconMobile : detailsIconMobile}>
-                        <FaMapMarkerAlt/>
+                        <FaMapMarkerAlt size={isMobile ? 22 : 16}/>
                     </div>
                     <Text
                         className={isMobile ? detailsMobile : detailsMobile}
