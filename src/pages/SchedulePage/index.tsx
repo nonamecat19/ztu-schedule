@@ -27,7 +27,6 @@ function SchedulePage({data, error}: Props) {
     })
 
     let currentDay = 2
-    console.log(data)
     if (!data[0][0].length)
         return (<h1>Помилка! Спробуйте пізніше або відправте відгук в телеграм на @NoNameCat</h1>)
 

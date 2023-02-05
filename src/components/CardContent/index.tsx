@@ -6,6 +6,7 @@ import {BsFillPersonFill} from "react-icons/bs";
 import {FaMapMarkerAlt} from "react-icons/fa";
 import Lesson from '../Lesson';
 import {isMobile} from "react-device-detect";
+import subjectRename from "../../shared/utils/subjectRename";
 
 interface Props {
     data: LessonType
@@ -126,7 +127,7 @@ function CardContent({data, time}: Props) {
             </div>
             <div className={isMobile ? subjectContainerMobile : subjectContainerPC}>
                 <Text className={isMobile ? subjectMobile : subjectPC}>
-                    {limitStr(subject, 30)}
+                    {limitStr(subjectRename(subject), 30)}
                 </Text>
             </div>
             <div className={isMobile ? detailsContainerMobile : detailsContainerPC}>
