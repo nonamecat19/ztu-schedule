@@ -1,9 +1,7 @@
 import SchedulePage from '../src/pages/SchedulePage'
 import React from 'react'
-import axios, {AxiosResponse} from "axios";
-import {GroupDataType} from "../src/shared/types/card/card";
+import axios from "axios";
 import cheerio from "cheerio";
-import fs from "fs";
 
 function Schedule({data, error}) {
     return <SchedulePage
@@ -13,7 +11,6 @@ function Schedule({data, error}) {
 }
 
 export async function getServerSideProps() {
-    const fs = require("fs")
     // let data: any = null
     // let error: boolean = false
     // await axios('http://127.0.0.1:3000/api/data/')
@@ -50,8 +47,7 @@ function getType(str) {
 }
 
 async function getSchedule() {
-    const cheerio = require("cheerio")
-    const j2cp = require("json2csv").Parser
+
     const url = "https://rozklad.ztu.edu.ua/schedule/group/%D0%92%D0%A2-21-1?new"
     let schedule = []
     let daySchedule = []
@@ -134,9 +130,9 @@ async function getSchedule() {
 
         schedule = [week1, week2]
 
-        const parser = new j2cp()
-        const csv = parser.parse(schedule)
-        fs.writeFileSync("./schedule.csv", csv)
+        // const parser = new j2cp()
+        // const csv = parser.parse(schedule)
+        // fs.writeFileSync("./schedule.csv", csv)
 
 
         // console.log(schedule)
