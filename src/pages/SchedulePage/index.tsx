@@ -5,6 +5,7 @@ import {GroupDataType, ColumnType, WeekType} from "../../shared/types/card/card"
 import ScheduleHeader from "../../components/ScheduleHeader";
 import {isMobile} from "react-device-detect";
 import {useScheduleStore} from "../../store/store";
+import DayPick from "../../components/DayPick";
 
 interface Props {
     data: any
@@ -38,7 +39,9 @@ function SchedulePage({data, error}: Props) {
                 <ScheduleHeader/>
             </div>
 
-            <div className="SchedulePage bg-bg max-h-screen flex justify-center">
+
+            <DayPick/>
+            <div className="SchedulePage bg-bg min-h-screen flex justify-center">
                 {
                     mobile || isMobile
                         ?

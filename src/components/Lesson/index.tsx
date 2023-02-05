@@ -13,9 +13,9 @@ function Lesson({type}: Props) {
         [key: string]: [string, string]
     } = {
         'lec': ['Лекція', 'bg-lecture'],
-        'lab': ['Лабораторна', 'bg-consult'],
-        'pra': ['Практика', 'bg-laboratory'],
-        'con': ['Консультація', 'bg-practice']
+        'lab': ['Лабораторна', 'bg-laboratory'],
+        'pra': ['Практика', 'bg-practice'],
+        'con': ['Консультація', 'bg-consult']
     }
     const [typeText, typeClass] = text[type]
 
