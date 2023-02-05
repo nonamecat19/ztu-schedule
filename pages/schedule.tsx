@@ -11,16 +11,23 @@ function Schedule({data, error}) {
 }
 
 export async function getServerSideProps() {
-    let data: any = null
-    let error: boolean = false
-    await axios('http://127.0.0.1:3000/api/data/')
-        .then((response: AxiosResponse<GroupDataType>) => data = response.data)
-        .catch(() => error = true)
+    // let data: any = null
+    // let error: boolean = false
+    // await axios('http://127.0.0.1:3000/api/data/')
+    //     .then((response: AxiosResponse<GroupDataType>) => data = response.data)
+    //     .catch(() => error = true)
+    // return {
+    //     props:
+    //         {
+    //             data: data,
+    //             error: error
+    //         }
+    // }
     return {
         props:
             {
-                data: data,
-                error: error
+                data: [[[]]],
+                error: false
             }
     }
 }
