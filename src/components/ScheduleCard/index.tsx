@@ -14,6 +14,18 @@ function ScheduleCard({data, time}: Props) {
 
     const currentGroupFirst = useScheduleStore<boolean>(state => state['currentGroupFirst'])
 
+    let currentIndex
+    if (data.length == 1 || currentGroupFirst)
+        currentIndex = 0;
+    else
+        currentIndex = 1
+
+    let secondInder
+    if (data.length == 2 && currentGroupFirst)
+        secondInder = 1
+    else
+        secondInder = 0
+
     useScheduleStore<void>(state => state['selectCurrentGroup'])
 
     const classPC = `
@@ -39,13 +51,12 @@ function ScheduleCard({data, time}: Props) {
         <div
             className={isMobile ? classMobile : classPC}
         >
-            {/*Змінити класи*/}
             <CardContent
-                data={data[currentGroupFirst ? 0 : 1]}
+                data={data[currentIndex]}
                 time={time}
             />
             {
-                typeof data[currentGroupFirst ? 1 : 0] === 'number' || (
+                typeof data[secondInder] === 'number' || (
                     <Tooltip
                         className='bg-another rounded-xl absolute w-12 bottom-1.5 right-1.5 lg:h-7 h-9'
                         content="В цей час є пара в іншої підгрупи"
@@ -54,7 +65,6 @@ function ScheduleCard({data, time}: Props) {
                 )
             }
         </div>
-
     )
 }
 

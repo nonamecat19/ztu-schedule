@@ -3,17 +3,17 @@ export type NonEmptyLessonType = {
     subject: string,
     teacher: string,
     room: string,
-    time: string,
-    disabled: boolean,
-    other: boolean
+    groups: string
 }
 
 export type LessonType = NonEmptyLessonType | 0
 
-export type CardType = [LessonType, LessonType]
+export type CardType = [LessonType, LessonType] | [LessonType]
 
 export type ColumnType = [CardType, CardType, CardType, CardType, CardType, CardType, CardType]
 
 export type WeekType = [ColumnType, ColumnType, ColumnType, ColumnType, ColumnType]
 
 export type GroupDataType = [WeekType, WeekType]
+
+

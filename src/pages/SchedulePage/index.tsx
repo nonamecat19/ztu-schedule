@@ -7,14 +7,12 @@ import ScheduleHeader from "../../components/ScheduleHeader";
 import {isMobile} from "react-device-detect";
 
 interface Props {
-
+    data: any
 }
 
-function SchedulePage({}: Props) {
-
-    let group: GroupDataType = GetCards()
+function SchedulePage({data}: Props) {
+    let group: GroupDataType = data
     let firstWeek: WeekType = group[0]
-
 
     const [mobile, setMobile] = useState<boolean>(false)
     const [mobileSelected, setMobileSelected] = useState<number>(1)
@@ -51,14 +49,14 @@ function SchedulePage({}: Props) {
                             />
                         </div>
                         :
-                        firstWeek.map((data: ColumnType, index: number) => {
+                        firstWeek.map((el: ColumnType, index: number) => {
                             return (
                                 <div
                                     className={currentDay === index ? 'bg-gradient-to-b from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}
                                     key={index}
                                 >
                                     <CardColumn
-                                        data={firstWeek[mobileSelected]}
+                                        data={el}
                                     />
                                 </div>
                             )
@@ -69,6 +67,5 @@ function SchedulePage({}: Props) {
 
     )
 }
-
 export default SchedulePage
 

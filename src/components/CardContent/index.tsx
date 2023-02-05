@@ -85,7 +85,7 @@ function CardContent({data, time}: Props) {
     const subjectPC = `
         2xl:text-xl
         xl:text-lg
-        lg:text-lg
+        lg:text-base
         md:text-2xl
         sm:text-xl
         text-lg
@@ -126,7 +126,7 @@ function CardContent({data, time}: Props) {
             </div>
             <div className={isMobile ? subjectContainerMobile : subjectContainerPC}>
                 <Text className={isMobile ? subjectMobile : subjectPC}>
-                    {subject}
+                    {limitStr(subject, 30)}
                 </Text>
             </div>
             <div className={isMobile ? detailsContainerMobile : detailsContainerPC}>
@@ -137,7 +137,7 @@ function CardContent({data, time}: Props) {
                     <Text
                         className={isMobile ? detailsMobile : detailsPC}
                     >
-                        {teacher}
+                        {initials(teacher)}
                     </Text>
                 </div>
                 <div className={isMobile ? detailsItemMobile : detailsItemPC}>
@@ -151,9 +151,24 @@ function CardContent({data, time}: Props) {
                     </Text>
                 </div>
             </div>
-
         </>
     )
+}
+const limitStr = (str: string, n: number): string => {
+    return str.length >= n
+        ? str.slice(0, n - 3) + '...'
+        : str
+}
+
+const initials = (str: string): string => {
+    return str
+        .split(/\s+/)
+        .map((word,index) =>
+            index
+                ? word.substring(0,1).toUpperCase() + '.'
+                : word
+        )
+        .join(' ');
 }
 export default CardContent
 

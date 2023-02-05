@@ -22,7 +22,8 @@ const darkTheme = createTheme({
 export default function App({Component, pageProps}) {
     return (
         <NextThemesProvider
-            defaultTheme="system"
+            // defaultTheme="system"
+            defaultTheme="dark"
             attribute="class"
             value={{
                 light: lightTheme.className,

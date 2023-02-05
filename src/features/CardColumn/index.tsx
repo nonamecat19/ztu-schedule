@@ -19,14 +19,13 @@ function CardColumn({data}: Props) {
         '18:00-19:20'
     ]
 
-
     return (
         <div className="CardRow flex-column items-center">
             {
-                data.map((data, index: number) => {
+                data.map((el, index: number) => {
                     return (
                         <ScheduleCard
-                            data={data}
+                            data={el}
                             time={timeLessons[index]}
                             key={index}
                         />
