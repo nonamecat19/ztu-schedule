@@ -17,7 +17,6 @@ function CardContent({data, time}: Props) {
     if (typeof data === 'number')
         return <></>
 
-
     const detailsContainerPC = `
         flex ml-1
         lg:flex-col 
@@ -31,20 +30,18 @@ function CardContent({data, time}: Props) {
         2xl:text-md
         xl:text-sm
         lg:text-xs
-           text-xl
+           text-lg
     `
 
     const detailsMobile = `
         2xl:text-md
         xl:text-sm
         lg:text-4xl
-           text-xl
+           text-lg
     `
 
     const detailsItemPC = `flex w-[200px]`
-
     const detailsItemMobile = `flex w-[300px]`
-
 
     const detailsIconPC = `
         mt-[6px] mr-[6px]
@@ -148,7 +145,7 @@ function CardContent({data, time}: Props) {
                     <Text
                         className={isMobile ? detailsMobile : detailsPC}
                     >
-                        {room}
+                        {roomFixer(room)}
                     </Text>
                 </div>
             </div>
@@ -160,6 +157,8 @@ const limitStr = (str: string, n: number): string => {
         ? str.slice(0, n - 3) + '...'
         : str
 }
+
+const roomFixer = (str: string): string => str.slice(0, 3) === 'Дис' ? 'Дис.' : str
 
 const initials = (str: string): string => {
     return str
