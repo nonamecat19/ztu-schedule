@@ -4,6 +4,7 @@ import CardColumn from "../../features/CardColumn";
 import {GroupDataType, ColumnType, WeekType} from "../../shared/types/card/card";
 import ScheduleHeader from "../../components/ScheduleHeader";
 import {isMobile} from "react-device-detect";
+import {useScheduleStore} from "../../store/store";
 
 interface Props {
     data: any
@@ -12,8 +13,8 @@ interface Props {
 
 function SchedulePage({data, error}: Props) {
     let group: GroupDataType = data
-
-    let firstWeek: WeekType = group[0]
+    const currentWeekStore = useScheduleStore(state => state['currentWeekFirst'])
+    let currentWeek: WeekType = group[currentWeekStore ? 1 : 0]
 
     const [mobile, setMobile] = useState<boolean>(false)
     const [mobileSelected, setMobileSelected] = useState<number>(1)
@@ -49,11 +50,11 @@ function SchedulePage({data, error}: Props) {
                             }
                         >
                             <CardColumn
-                                data={firstWeek[mobileSelected]}
+                                data={currentWeek[mobileSelected]}
                             />
                         </div>
                         :
-                        firstWeek.map((el: ColumnType, index: number) => {
+                        currentWeek.map((el: ColumnType, index: number) => {
                             return (
                                 <div
                                     className={currentDay === index ? 'bg-gradient-to-b from-currentDayEdges via-currentDayCenter to-currentDayEdges' : ''}

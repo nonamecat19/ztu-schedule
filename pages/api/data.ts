@@ -1,9 +1,7 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import axios from "axios";
+import {ColumnType, GroupDataType, WeekType} from "../../src/shared/types/card/card";
 const cheerio = require("cheerio")
-
-const j2cp = require("json2csv").Parser
-const fs = require("fs")
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json(await getSchedule())
@@ -21,13 +19,13 @@ function getType(str) {
     return ''
 }
 
-async function getSchedule() {
+async function getSchedule(): Promise<GroupDataType> {
     const url = "https://rozklad.ztu.edu.ua/schedule/group/%D0%92%D0%A2-21-1?new"
     let schedule = []
     let daySchedule = []
 
     try {
-        const response = await axios.get(url)
+        const response = await axios(url)
         const $ = cheerio.load(response.data)
 
         const day = $("td")
@@ -61,30 +59,27 @@ async function getSchedule() {
                     else
                         obj2 = {groups, type, subject, teacher, room}
                 }
-
             }
 
             if (!(obj1 === 0 && obj2 === 0) && block === "variative")
                 daySchedule = [obj1]
             else
                 daySchedule = [obj1, obj2]
-
             schedule.push(daySchedule)
 
         })
 
-        //формування днів та тижнів
-        const MAX_LESSONS = 69
-        let k = 0
-        let counter = 0
+        const MAX_LESSONS: number = 69
+        let k: number = 0
+        let counter: number = 0
 
-        let column1 = []
-        let column2 = []
-        let week1 = []
-        let week2 = []
+        let column1: ColumnType | any = []
+        let column2: ColumnType | any = []
+        let week1: WeekType | any = []
+        let week2: WeekType | any = []
 
-        for (let i = 0; i < 5; i++) {
-            for (let index = 0; index < schedule.length; index++) {
+        for (let i: number = 0; i < 5; i++) {
+            for (let index: number = 0; index < schedule.length; index++) {
                 if (index === k) {
                     counter++
                     k += 5
@@ -102,21 +97,7 @@ async function getSchedule() {
             counter = 0
         }
 
-        schedule = [week1, week2]
-
-        const parser = new j2cp()
-        const csv = parser.parse(schedule)
-        fs.writeFileSync("./schedule.csv", csv)
-
-
-        // console.log(schedule)
-        // console.log(schedule[0][0]) //понеділок 1 тижня
-        // console.log(schedule[1][0]) //понеділок 2 тижня
-        // console.log(schedule[0][1]) //вівторок 1 тижня
-        // console.log(schedule[1][4]) //п'ятниця 2 тижня
-        // console.log(schedule[1][4][0]) //п'ятниця 2 тижня 1 пара
-
-        return schedule
+        return [week1, week2]
     } catch (err) {
         console.error(err)
     }

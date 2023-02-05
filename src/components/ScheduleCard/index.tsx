@@ -12,16 +12,16 @@ interface Props {
 
 function ScheduleCard({data, time}: Props) {
 
-    const currentGroupFirst = useScheduleStore<boolean>(state => state['currentGroupFirst'])
+    const currentGroupSecond = useScheduleStore<boolean>(state => state['currentGroupFirst'])
 
     let currentIndex
-    if (data.length == 1 || currentGroupFirst)
+    if (data.length == 1 || !currentGroupSecond)
         currentIndex = 0;
     else
         currentIndex = 1
 
     let secondInder
-    if (data.length == 2 && currentGroupFirst)
+    if (data.length == 2 && !currentGroupSecond)
         secondInder = 1
     else
         secondInder = 0
