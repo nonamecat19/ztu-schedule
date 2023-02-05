@@ -1,20 +1,28 @@
 import SchedulePage from '../src/pages/SchedulePage'
 import React from 'react'
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
+import {GroupDataType} from "../src/shared/types/card/card";
 
-function Schedule({data}) {
-  return <SchedulePage
-    data={data}
-  />
+function Schedule({data, error}) {
+    return <SchedulePage
+        data={data}
+        error={error}
+    />
 }
 
-export async function getServerSideProps(){
-  let data: any = []
-  await axios.get('http://127.0.0.1:3000/api/data/')
-      .then(response => {
-        data = response.data
-      })
-  return {props: {data: data}}
+export async function getServerSideProps() {
+    let data: any = null
+    let error: boolean = false
+    await axios('http://127.0.0.1:3000/api/data/')
+        .then((response: AxiosResponse<GroupDataType>) => data = response.data)
+        .catch(() => error = true)
+    return {
+        props:
+            {
+                data: data,
+                error: error
+            }
+    }
 }
 
 export default Schedule

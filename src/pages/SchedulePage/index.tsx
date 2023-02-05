@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import './SchedulePage.module.scss'
-import GetCards from "../../shared/mocks/cards";
 import CardColumn from "../../features/CardColumn";
 import {GroupDataType, ColumnType, WeekType} from "../../shared/types/card/card";
 import ScheduleHeader from "../../components/ScheduleHeader";
@@ -8,10 +7,12 @@ import {isMobile} from "react-device-detect";
 
 interface Props {
     data: any
+    error: boolean
 }
 
-function SchedulePage({data}: Props) {
+function SchedulePage({data, error}: Props) {
     let group: GroupDataType = data
+
     let firstWeek: WeekType = group[0]
 
     const [mobile, setMobile] = useState<boolean>(false)
@@ -26,6 +27,11 @@ function SchedulePage({data}: Props) {
     })
 
     let currentDay = 2
+    console.log(data)
+    if (!data[0][0].length){
+        alert('Помилка! Спробуйте пізніше або відправте відгук на @NoNameCat')
+        return (<></>)
+    }
 
     return (
         <>
