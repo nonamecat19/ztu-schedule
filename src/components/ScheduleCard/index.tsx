@@ -68,5 +68,9 @@ function ScheduleCard({data, time}: Props) {
     )
 }
 
+
+
+
+
 export default ScheduleCard
 

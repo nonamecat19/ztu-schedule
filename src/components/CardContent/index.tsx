@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './CardContent.module.scss'
 import {LessonType} from "../../shared/types/card/card"
-import {Text} from "@nextui-org/react";
+import {Text, Modal} from "@nextui-org/react";
 import {BsFillPersonFill} from "react-icons/bs";
 import {FaMapMarkerAlt} from "react-icons/fa";
 import Lesson from '../Lesson';
@@ -14,6 +14,7 @@ interface Props {
 }
 
 function CardContent({data, time}: Props) {
+    const [visible, setVisible] = useState(false);
     if (typeof data === 'number')
         return <></>
 
@@ -112,6 +113,57 @@ function CardContent({data, time}: Props) {
         sm:h-[130px] 
         h-[80px]
     `
+    const handler = () => setVisible(true);
+    const closeHandler = () => setVisible(false)
+
+    function LessonModal({data}) {
+        let currentData: LessonType = data
+        if (typeof currentData === 'number')
+            return <></>
+
+        let {subject, teacher, room, groups} = currentData
+
+        return (
+            <Modal
+                closeButton
+                aria-labelledby="modal-title2"
+                open={visible}
+                onClose={closeHandler}
+            >
+                <Modal.Header>
+                    <div className="flex flex-col">
+                        <Text
+                            size={20}
+                        >
+                            {subject}
+                        </Text>
+                        <Text
+                            size={20}
+                        >
+                            {teacher}
+                        </Text>
+                        <Text
+                            size={20}
+                        >
+                            {room}
+                        </Text>
+                        <Text
+                            size={20}
+                        >
+                            {groups}
+                        </Text>
+                    </div>
+
+                </Modal.Header>
+                <Modal.Body>
+
+                </Modal.Body>
+                <Modal.Footer>
+
+                </Modal.Footer>
+            </Modal>
+        )
+    }
 
     const {type, subject, teacher, room} = data
     return (
@@ -123,7 +175,10 @@ function CardContent({data, time}: Props) {
                 </Text>
             </div>
             <div className={isMobile ? subjectContainerMobile : subjectContainerPC}>
-                <Text className={isMobile ? subjectMobile : subjectPC}>
+                <Text
+                    className={(isMobile ? subjectMobile : subjectPC) + ' hover:cursor-pointer'}
+                    onClick={handler}
+                >
                     {limitStr(subjectRename(subject), 30)}
                 </Text>
             </div>
@@ -149,6 +204,10 @@ function CardContent({data, time}: Props) {
                     </Text>
                 </div>
             </div>
+
+
+            <LessonModal data={data}/>
+
         </>
     )
 }
