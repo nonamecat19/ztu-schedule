@@ -18,7 +18,7 @@ function SchedulePage({data, error}: Props) {
     let currentWeek: WeekType = group[currentWeekStore ? 1 : 0]
 
     const [mobile, setMobile] = useState<boolean>(false)
-    const [mobileSelected, setMobileSelected] = useState<number>(1)
+    const mobileSelected = useScheduleStore(state => state['mobileDay'])
     const handleResize = () => {
         setMobile(window.innerWidth < 1025)
     }
@@ -28,7 +28,7 @@ function SchedulePage({data, error}: Props) {
         window.addEventListener("resize", handleResize)
     })
 
-    let currentDay = 2
+    let currentDay =  new Date().getDay() - 1
     if (!data[0][0].length)
         return (<h1>Помилка! Спробуйте пізніше або відправте відгук в телеграм на @NoNameCat</h1>)
 
