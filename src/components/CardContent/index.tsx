@@ -77,7 +77,7 @@ function CardContent({data, time}: Props) {
          lg:text-3xl lg: mr-4
          md:text-xl
          sm:text-xl
-            text-xl
+            text-lg
     `
 
     const subjectPC = `
@@ -94,7 +94,7 @@ function CardContent({data, time}: Props) {
         xl:text-lg
         lg:text-7xl
         md:text-4xl
-        text-2xl
+        text-xl
     `
 
     const subjectContainerPC = `
@@ -110,7 +110,7 @@ function CardContent({data, time}: Props) {
         lg:h-[210px] 
         md:h-[130px] 
         sm:h-[130px] 
-        h-[100px]
+        h-[80px]
     `
 
     const {type, subject, teacher, room} = data
