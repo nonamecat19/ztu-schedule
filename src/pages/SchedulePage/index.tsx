@@ -34,10 +34,10 @@ function SchedulePage({data}: Props) {
 
 
     return (
-        <>
+        <div className='min-h-screen bg-bg'>
             <ScheduleHeader/>
             <DayPick/>
-            <div className="SchedulePage bg-bg min-h-screen flex justify-center">
+            <div className="SchedulePage bg-bg flex justify-center">
                 {
                     mobile || isMobile
                         ?
@@ -67,7 +67,7 @@ function SchedulePage({data}: Props) {
                         })
                 }
             </div>
-        </>
+        </div>
 
     )
 }
