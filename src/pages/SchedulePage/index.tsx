@@ -12,7 +12,7 @@ interface Props {
     error: boolean
 }
 
-function SchedulePage({data, error}: Props) {
+function SchedulePage({data}: Props) {
     let group: GroupDataType = data
     const currentWeekStore = useScheduleStore(state => state['currentWeekFirst'])
     let currentWeek: WeekType = group[currentWeekStore ? 1 : 0]
@@ -28,18 +28,14 @@ function SchedulePage({data, error}: Props) {
         window.addEventListener("resize", handleResize)
     })
 
-    let currentDay =  new Date().getDay() - 1
+    let currentDay = new Date().getDay() - 1
     if (!data[0][0].length)
         return (<h1>Помилка! Спробуйте пізніше або відправте відгук в телеграм на @NoNameCat</h1>)
 
 
     return (
         <>
-            <div>
-                <ScheduleHeader/>
-            </div>
-
-
+            <ScheduleHeader/>
             <DayPick/>
             <div className="SchedulePage bg-bg min-h-screen flex justify-center">
                 {
@@ -75,5 +71,6 @@ function SchedulePage({data, error}: Props) {
 
     )
 }
+
 export default SchedulePage
 

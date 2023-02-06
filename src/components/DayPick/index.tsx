@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './DayPick.module.scss'
 import {Button, Text} from "@nextui-org/react";
 import {useScheduleStore} from "../../store/store";
@@ -16,7 +16,7 @@ function DayPick({}: Props) {
     const changeDayHandler = useScheduleStore(state => state['selectMobileDay'])
 
     return(
-        <div className="DayPick bg-bg flex justify-around py-3 w-[87%]">
+        <div className="DayPick bg-bg  justify-around py-3 w-[87%] md:hidden flex">
             {
                 days.map((element, index) => {
 
