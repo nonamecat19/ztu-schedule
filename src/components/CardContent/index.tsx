@@ -101,7 +101,7 @@ function CardContent({data, time}: Props) {
     const subjectContainerPC = `
         flex justify-center items-center text-center 
         lg:h-[60px] 
-        md:h-[70px] 
+        md:h-[50px] 
         sm:h-[45px] 
         h-[40px]
     `

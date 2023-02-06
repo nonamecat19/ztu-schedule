@@ -15,7 +15,7 @@ function ScheduleHeader({}: Props) {
 
     return (
         <>
-            <div className='md:hidden block'>
+            <div className='lg:hidden block'>
                 <Button
                     color="secondary"
                     auto
@@ -45,7 +45,7 @@ function ScheduleHeader({}: Props) {
                 </Modal>
             </div>
 
-            <div className="ScheduleHeader bg-bg pt-4 pb-2 md:block hidden">
+            <div className="ScheduleHeader bg-bg pt-4 pb-2 lg:block hidden">
                 <Navbar.Content activeColor='secondary' hideIn="xs" variant='highlight-solid'>
                     <div className="flex w-full justify-around">
 

@@ -7,3 +7,17 @@
 *{
     /*outline: 1px solid red;*/
 }
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+::-moz-selection {
+    color: white;
+    background: #9750dd;
+}
+
+::selection {
+    color: white;
+    background: #9750dd;
+}
