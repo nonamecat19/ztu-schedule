@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './DayPick.module.scss'
-import {Button} from "@nextui-org/react";
+import {Button, Text} from "@nextui-org/react";
 
 interface Props {
 
@@ -14,7 +14,7 @@ function DayPick({}: Props) {
     const changeDayHandler = (num: number) => setCurrentDay(num)
 
     return(
-        <div className="DayPick bg-bg flex justify-around py-3">
+        <div className="DayPick bg-bg flex justify-around py-3 w-[87%]">
             {
                 days.map((element, index) => {
 
@@ -24,10 +24,15 @@ function DayPick({}: Props) {
                             color={index === currentDay ? 'error' : 'secondary'}
                             auto
                             key={index}
-                            className={(index === currentDay ? 'bg-[#f31260]' : 'bg-[#9750dd]') + ' text-lg px-8'}
+                            className={(index === currentDay ? 'bg-[#f31260]' : 'bg-[#9750dd]') + ' text-lg px-4'}
                             onClick={() => changeDayHandler(index)}
                         >
-                            {element}
+                            <Text
+                                h3
+                                className='text-md'
+                            >
+                                {element}
+                            </Text>
                         </Button>
                     )
                 })

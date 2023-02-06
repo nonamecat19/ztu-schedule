@@ -19,7 +19,7 @@ function ScheduleHeader({}: Props) {
                 <Button
                     color="secondary"
                     auto
-                    className='bg-[#9750dd] p-2 fixed right-1 top-1 z-[5]'
+                    className='bg-[#9750dd] p-2 fixed right-1 top-3 z-[5]'
                     shadow
                     onPress={handler}
                     icon={<TbMenu2/>}
