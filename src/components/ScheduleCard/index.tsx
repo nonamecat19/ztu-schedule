@@ -44,7 +44,7 @@ function ScheduleCard({data, time}: Props) {
          lg:h-[330px]  lg:w-[90vw]   lg:px-1.5 lg:py-1
          md:h-[220px]  md:w-[90vw]   md:px-1.5 md:py-1
          sm:h-[220px]  sm:w-[90vw]   sm:px-1.5 sm:py-1
-            h-[190px]     w-[90vw]      px-1.5    py-1
+            h-[160px]     w-[90vw]      px-1.5    py-1
     `
 
     return (
