@@ -27,7 +27,6 @@
     "babel-plugin-twin": "^1.1.0",
     "cheerio": "^1.0.0-rc.12",
     "chrome-aws-lambda": "^10.1.0",
-    "chromium": "^3.0.3",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
     "express": "^4.18.2",
