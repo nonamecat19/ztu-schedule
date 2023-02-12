@@ -27,27 +27,27 @@ const equalObject = (obj1, obj2): boolean => {
 }
 
 async function getCabinet(week?, day?): Promise<CabinetInfo> {
-    // const url = "https://cabinet.ztu.edu.ua/site/schedule"
-    // const loginPage = "https://cabinet.ztu.edu.ua/site/login"
-    //
-    // const browser = await puppeteer.launch()
-    // const page = await browser.newPage()
-    // await page.goto(loginPage)
-    // // @ts-ignore
-    // await page.$eval("#loginform-username", (el) => el.value = "vt211_zks")
-    // // @ts-ignore
-    // await page.$eval("#loginform-password", (el) => el.value = "700170")
-    // await page.click("#login-form > div:nth-child(6) > button")
-    // await page.waitForSelector("body > div > div > div.site-index > div > div > a:nth-child(2)")
-    // await page.goto(url)
-    //
-    // const exp = await page.$eval("body > div.wrap > div", (el) => el.innerHTML)
-    // let ex = await page.$eval("body > div.wrap > div", (el) => el.innerHTML)
-    // let ind = ex.indexOf("<h2>")
-    // let ind2 = ex.indexOf("<style>")
-    // ex = ex.substring(ind, ind2)
-    // // @ts-ignore
-    // ex = ex.split("<div style=\"color:#DDD; display: none;\">")
+    const url = "https://cabinet.ztu.edu.ua/site/schedule"
+    const loginPage = "https://cabinet.ztu.edu.ua/site/login"
+
+    const browser = await puppeteer.launch()
+    const page = await browser.newPage()
+    await page.goto(loginPage)
+    // @ts-ignore
+    await page.$eval("#loginform-username", (el) => el.value = "vt211_zks")
+    // @ts-ignore
+    await page.$eval("#loginform-password", (el) => el.value = "700170")
+    await page.click("#login-form > div:nth-child(6) > button")
+    await page.waitForSelector("body > div > div > div.site-index > div > div > a:nth-child(2)")
+    await page.goto(url)
+
+    const exp = await page.$eval("body > div.wrap > div", (el) => el.innerHTML)
+    let ex = await page.$eval("body > div.wrap > div", (el) => el.innerHTML)
+    let ind = ex.indexOf("<h2>")
+    let ind2 = ex.indexOf("<style>")
+    ex = ex.substring(ind, ind2)
+    // @ts-ignore
+    ex = ex.split("<div style=\"color:#DDD; display: none;\">")
 
     let lessons = []
     // let para = 1
