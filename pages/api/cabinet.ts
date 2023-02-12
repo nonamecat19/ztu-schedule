@@ -4,6 +4,8 @@ import express from "express"
 import cheerio from "cheerio"
 import puppeteer from "puppeteer"
 import {CabinetInfo} from "../../src/shared/types/cabinet";
+import chromium from "chrome-aws-lambda";
+import playwright from "playwright-core";
 
 const app = express()
 config()
@@ -30,7 +32,7 @@ async function getCabinet(week?, day?): Promise<CabinetInfo> {
     const url = "https://cabinet.ztu.edu.ua/site/schedule"
     const loginPage = "https://cabinet.ztu.edu.ua/site/login"
 
-    const browser = await puppeteer.launch()
+    const browser = await playwright.chromium.launch()
     const page = await browser.newPage()
     // await page.goto(loginPage)
     // // @ts-ignore
