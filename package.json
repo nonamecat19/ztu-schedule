@@ -36,7 +36,6 @@
     "next-themes": "^0.2.1",
     "playwright-core": "^1.30.0",
     "postcss": "^8.4.21",
-    "puppeteer": "^19.6.3",
     "react": "18.2.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
