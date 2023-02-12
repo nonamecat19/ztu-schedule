@@ -8,20 +8,18 @@ import {useScheduleStore} from "../../store/store";
 import DayPick from "../../components/DayPick";
 
 interface Props {
-    data: any
+    propsData: any
     error: boolean
 }
 
-function SchedulePage({data}: Props) {
-    let group: GroupDataType = data
+function SchedulePage({propsData}: Props) {
+    let group: GroupDataType = propsData
     const currentWeekStore = useScheduleStore(state => state['currentWeekFirst'])
     let currentWeek: WeekType = group[currentWeekStore ? 1 : 0]
 
     const [mobile, setMobile] = useState<boolean>(false)
     const mobileSelected = useScheduleStore(state => state['mobileDay'])
-    const handleResize = () => {
-        setMobile(window.innerWidth < 1025)
-    }
+    const handleResize = () => setMobile(window.innerWidth < 1025)
 
     useEffect(() => {
         handleResize()
@@ -29,9 +27,8 @@ function SchedulePage({data}: Props) {
     })
 
     let currentDay = new Date().getDay() - 1
-    if (!data[0][0].length)
+    if (!propsData[0][0].length)
         return (<h1>Помилка! Спробуйте пізніше або відправте відгук в телеграм на @NoNameCat</h1>)
-
 
     return (
         <div className='min-h-screen bg-bg'>

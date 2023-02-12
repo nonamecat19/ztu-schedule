@@ -5,7 +5,7 @@ import cheerio from "cheerio";
 
 function Schedule({data, error}) {
     return <SchedulePage
-        data={data}
+        propsData={data}
         error={error}
     />
 }

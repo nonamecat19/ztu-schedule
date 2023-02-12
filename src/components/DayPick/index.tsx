@@ -16,7 +16,7 @@ function DayPick({}: Props) {
     const changeDayHandler = useScheduleStore(state => state['selectMobileDay'])
 
     return(
-        <div className="DayPick bg-bg  justify-around py-3 w-[87%] lg:hidden flex">
+        <div className="DayPick bg-bg  justify-around py-3 ml-[20%] w-[60%] min-w-[260px] lg:hidden flex">
             {
                 days.map((element, index) => {
 

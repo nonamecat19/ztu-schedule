@@ -21,3 +21,13 @@
     color: white;
     background: #9750dd;
 }
+
+
+
+.CabinetModalItem a{
+    color: #ae5cff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
