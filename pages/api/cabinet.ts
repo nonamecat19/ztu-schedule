@@ -32,7 +32,16 @@ async function getCabinet(week?, day?): Promise<CabinetInfo> {
     const url = "https://cabinet.ztu.edu.ua/site/schedule"
     const loginPage = "https://cabinet.ztu.edu.ua/site/login"
 
-    const browser = await playwright.chromium.launch()
+    const browser = await playwright.chromium.launch({
+        args: [...chromium.args, "--font-render-hinting=none"], // This way fix rendering issues with specific fonts
+        executablePath:
+            process.env.NODE_ENV === "production"
+                ? await chromium.executablePath
+                : "/usr/local/bin/chromium",
+        headless:
+            process.env.NODE_ENV === "production" ? chromium.headless : true,
+    });
+
     const page = await browser.newPage()
     // await page.goto(loginPage)
     // // @ts-ignore
