@@ -2,6 +2,7 @@ import {NextApiRequest, NextApiResponse} from "next"
 import {config} from "dotenv"
 import express from "express"
 import cheerio from "cheerio"
+// @ts-ignore
 import puppeteer from "puppeteer"
 import {CabinetInfo} from "../../src/shared/types/cabinet";
 
@@ -49,7 +50,7 @@ async function getCabinet(week?, day?): Promise<CabinetInfo> {
     // // @ts-ignore
     // ex = ex.split("<div style=\"color:#DDD; display: none;\">")
     //
-    // let lessons = []
+    let lessons = []
     // let para = 1
     // try {
     //     const $ = cheerio.load(exp)
