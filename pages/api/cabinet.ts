@@ -2,7 +2,6 @@ import {NextApiRequest, NextApiResponse} from "next"
 import {config} from "dotenv"
 import express from "express"
 import cheerio from "cheerio"
-import puppeteer from "puppeteer"
 import {CabinetInfo} from "../../src/shared/types/cabinet";
 
 const app = express()
