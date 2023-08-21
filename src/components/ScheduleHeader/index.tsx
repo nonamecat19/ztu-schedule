@@ -13,7 +13,7 @@ interface Props {
 }
 
 function ScheduleHeader({}: Props) {
-    const { data, error, isLoading } = useSWR('/api/cabinet', fetcher)
+    // const { data, error, isLoading } = useSWR('/api/cabinet', fetcher)
 
     const [visible, setVisible] = useState(false);
     const handler = () => setVisible(true);
@@ -35,13 +35,13 @@ function ScheduleHeader({}: Props) {
                 {/*    onPress={cabinetHandler}*/}
                 {/*    icon={isLoading ? <Loading color="secondary"/>: <MdSchedule size={20}/>}*/}
                 {/*/>*/}
-                {(isLoading && !error) || (
-                    <CabinetModal
-                        visible={cabinetVisible}
-                        closeHandler={closeCabinetHandler}
-                        data={data}
-                    />
-                )}
+                {/*{(isLoading && !error) || (*/}
+                {/*    <CabinetModal*/}
+                {/*        visible={cabinetVisible}*/}
+                {/*        closeHandler={closeCabinetHandler}*/}
+                {/*        data={data}*/}
+                {/*    />*/}
+                {/*)}*/}
                 <Button
                     color="secondary"
                     auto
@@ -81,13 +81,13 @@ function ScheduleHeader({}: Props) {
                         {/*    onPress={cabinetHandler}*/}
                         {/*    icon={isLoading ? <Loading color="secondary"/>: <MdSchedule size={20}/>}*/}
                         {/*/>*/}
-                        {(isLoading && !error) || (
-                            <CabinetModal
-                                visible={cabinetVisible}
-                                closeHandler={closeCabinetHandler}
-                                data={data}
-                            />
-                        )}
+                        {/*{(isLoading && !error) || (*/}
+                        {/*    <CabinetModal*/}
+                        {/*        visible={cabinetVisible}*/}
+                        {/*        closeHandler={closeCabinetHandler}*/}
+                        {/*        data={data}*/}
+                        {/*    />*/}
+                        {/*)}*/}
                         <ToHome/>
                         <GroupChanger/>
                         <WeekChanger/>
