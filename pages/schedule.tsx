@@ -2,7 +2,7 @@ import SchedulePage from '../src/pages/SchedulePage'
 import React from 'react'
 import getSchedule from "../src/lib/getSchedule";
 
-function Schedule({data, error}) {
+export default function Schedule({data, error}) {
     return <SchedulePage
         propsData={data}
         error={error}
@@ -25,4 +25,3 @@ export async function getStaticProps() {
 }
 
 
-export default Schedule

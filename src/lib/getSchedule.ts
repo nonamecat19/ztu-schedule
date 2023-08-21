@@ -1,11 +1,6 @@
 import axios from "axios";
 import cheerio from "cheerio";
-
-interface GetSchedule {
-    data: any[] | null
-    error: boolean
-    errorMessage: string | null
-}
+import {BaseApi} from "../shared/types/api";
 
 function getType(str: string) {
     if (str.includes("Лабораторна"))
@@ -19,7 +14,7 @@ function getType(str: string) {
     return ''
 }
 
-export default async function getSchedule(groupName: string = '%D0%92%D0%A2-21-1?new'): Promise<GetSchedule> {
+export default async function getSchedule(groupName: string = '%D0%92%D0%A2-21-1?new'): Promise<BaseApi<any>> {
     const url = `https://rozklad.ztu.edu.ua/schedule/group/${groupName}`
     let schedule = []
     let daySchedule = []
@@ -101,7 +96,6 @@ export default async function getSchedule(groupName: string = '%D0%92%D0%A2-21-1
         }
 
         schedule = [week1, week2]
-
 
         // console.log(schedule)
         // console.log(schedule[0][0]) //понеділок 1 тижня

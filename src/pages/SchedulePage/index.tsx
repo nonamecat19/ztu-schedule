@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import './SchedulePage.module.scss'
 import CardColumn from "../../features/CardColumn";
 import {GroupDataType, ColumnType, WeekType} from "../../shared/types/card/card";
 import ScheduleHeader from "../../components/ScheduleHeader";

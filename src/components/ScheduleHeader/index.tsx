@@ -4,7 +4,6 @@ import {useScheduleStore} from "../../store/store";
 import {Switch, Text, Navbar, Badge, Modal, Button, Loading} from "@nextui-org/react";
 import {TbMenu2} from "react-icons/tb";
 import {MdSchedule} from "react-icons/md";
-import useSWR from "swr";
 import fetcher from "../../shared/utils/fetcher";
 import CabinetModal from "../CabinetModal";
 
