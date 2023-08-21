@@ -2,7 +2,6 @@ import {NextApiRequest, NextApiResponse} from "next"
 import {config} from "dotenv"
 import express from "express"
 import cheerio from "cheerio"
-// @ts-ignore
 import puppeteer from "puppeteer"
 import {CabinetInfo} from "../../src/shared/types/cabinet";
 
@@ -42,12 +41,12 @@ async function getCabinet(week?, day?): Promise<CabinetInfo> {
     await page.waitForSelector("body > div > div > div.site-index > div > div > a:nth-child(2)")
     await page.goto(url)
 
-    const exp = await page.$eval("body > div.wrap > div", (el) => el.innerHTML)
-    let ex = await page.$eval("body > div.wrap > div", (el) => el.innerHTML)
+    const exp = await page.$eval("body > div.wrap > div", el => el.innerHTML)
+    let ex: string | string[] = await page.$eval("body > div.wrap > div", el => el.innerHTML)
     let ind = ex.indexOf("<h2>")
     let ind2 = ex.indexOf("<style>")
+
     ex = ex.substring(ind, ind2)
-    // @ts-ignore
     ex = ex.split("<div style=\"color:#DDD; display: none;\">")
 
     let lessons = []

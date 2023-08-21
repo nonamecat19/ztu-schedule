@@ -26,15 +26,15 @@ function ScheduleHeader({}: Props) {
     return (
         <>
             <div className='lg:hidden block'>
-                <Button
-                    disabled={isLoading}
-                    color={'secondary'}
-                    auto
-                    className={(isLoading ? "bg-[#202020]" : "bg-[#9750dd]") + ' p-2 fixed left-2 top-3 z-[5]'}
-                    shadow={!isLoading}
-                    onPress={cabinetHandler}
-                    icon={isLoading ? <Loading color="secondary"/>: <MdSchedule size={20}/>}
-                />
+                {/*<Button*/}
+                {/*    disabled={isLoading}*/}
+                {/*    color={'secondary'}*/}
+                {/*    auto*/}
+                {/*    className={(isLoading ? "bg-[#202020]" : "bg-[#9750dd]") + ' p-2 fixed left-2 top-3 z-[5]'}*/}
+                {/*    shadow={!isLoading}*/}
+                {/*    onPress={cabinetHandler}*/}
+                {/*    icon={isLoading ? <Loading color="secondary"/>: <MdSchedule size={20}/>}*/}
+                {/*/>*/}
                 {(isLoading && !error) || (
                     <CabinetModal
                         visible={cabinetVisible}
@@ -72,15 +72,15 @@ function ScheduleHeader({}: Props) {
             <div className="ScheduleHeader bg-bg pt-4 pb-2 lg:block hidden">
                 <Navbar.Content activeColor='secondary' hideIn="xs" variant='highlight-solid'>
                     <div className="flex w-full justify-around">
-                        <Button
-                            disabled={isLoading}
-                            color={'secondary'}
-                            auto
-                            className={(isLoading ? "bg-[#202020]" : "bg-[#9750dd]") + ' p-2 w-16 z-[5]'}
-                            shadow={!isLoading}
-                            onPress={cabinetHandler}
-                            icon={isLoading ? <Loading color="secondary"/>: <MdSchedule size={20}/>}
-                        />
+                        {/*<Button*/}
+                        {/*    disabled={isLoading}*/}
+                        {/*    color={'secondary'}*/}
+                        {/*    auto*/}
+                        {/*    className={(isLoading ? "bg-[#202020]" : "bg-[#9750dd]") + ' p-2 w-16 z-[5]'}*/}
+                        {/*    shadow={!isLoading}*/}
+                        {/*    onPress={cabinetHandler}*/}
+                        {/*    icon={isLoading ? <Loading color="secondary"/>: <MdSchedule size={20}/>}*/}
+                        {/*/>*/}
                         {(isLoading && !error) || (
                             <CabinetModal
                                 visible={cabinetVisible}
