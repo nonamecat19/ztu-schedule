@@ -12,6 +12,7 @@
   "dependencies": {
     "@next/font": "13.1.4",
     "@nextui-org/react": "^1.0.0-beta.12",
+    "@vercel/analytics": "^1.0.2",
     "autoprefixer": "^10.4.13",
     "axios": "^1.2.5",
     "cheerio": "^1.0.0-rc.12",
@@ -34,8 +35,8 @@
     "@types/express": "^4.17.17",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
-    "tailwindcss-debug-screens": "^2.2.1",
     "eslint": "8.32.0",
-    "eslint-config-next": "13.1.4"
+    "eslint-config-next": "13.1.4",
+    "tailwindcss-debug-screens": "^2.2.1"
   }
 }

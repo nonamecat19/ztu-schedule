@@ -3,7 +3,6 @@ import {createTheme, NextUIProvider} from "@nextui-org/react";
 import {ThemeProvider as NextThemesProvider} from 'next-themes';
 import { IconContext } from "react-icons";
 
-
 const lightTheme = createTheme({
     type: 'light',
     theme: {
