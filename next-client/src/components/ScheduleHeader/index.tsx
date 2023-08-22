@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useScheduleStore} from "../../store/store";
 import {Switch, Text, Navbar, Badge, Modal, Button, Loading} from "@nextui-org/react";
 import {TbMenu2} from "react-icons/tb";
@@ -8,7 +8,12 @@ import CabinetModal from "../CabinetModal";
 import useSWR from 'swr';
 
 function ScheduleHeader({}) {
-    const url = `https://puppeteer-server.onrender.com/cabinet?login=${localStorage.getItem('ztu-login')}&pass=${localStorage.getItem('ztu-password')}`
+    const [url, setUrl] = useState<string>('')
+
+    useEffect(() => {
+        setUrl(`https://puppeteer-server.onrender.com/cabinet?login=${localStorage?.getItem('ztu-login') ?? ''}&pass=${localStorage?.getItem('ztu-password') ?? ''}`)
+    }, [])
+
     const { data, error, isLoading } = useSWR(url, fetcher)
 
     const [visible, setVisible] = useState(false);
