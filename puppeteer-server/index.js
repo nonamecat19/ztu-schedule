@@ -1,9 +1,10 @@
 const express = require("express")
 const { getCabinetData } = require("./cabinet")
+const cors = require('cors');
 const app = express()
 
 const PORT = process.env.PORT || 4000
-
+app.use(cors())
 app.get("/cabinet", async (req, res) => {
   if (!req.query.login || !req.query.pass) {
     res.json({
