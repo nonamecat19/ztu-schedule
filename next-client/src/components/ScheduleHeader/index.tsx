@@ -40,7 +40,7 @@ function ScheduleHeader({}) {
                     <CabinetModal
                         visible={cabinetVisible}
                         closeHandler={closeCabinetHandler}
-                        data={data.data}
+                        data={data?.data}
                     />
                 )}
                 <Button
@@ -86,7 +86,7 @@ function ScheduleHeader({}) {
                             <CabinetModal
                                 visible={cabinetVisible}
                                 closeHandler={closeCabinetHandler}
-                                data={data.data}
+                                data={data?.data}
                             />
                         )}
                         <ToHome/>
