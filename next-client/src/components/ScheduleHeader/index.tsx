@@ -6,6 +6,7 @@ import {MdSchedule} from "react-icons/md";
 import fetcher from "../../shared/utils/fetcher";
 import CabinetModal from "../CabinetModal";
 import useSWR from 'swr';
+import {useRouter} from "next/router";
 
 function ScheduleHeader({}) {
     const [url, setUrl] = useState<string>('')
@@ -101,6 +102,8 @@ function ScheduleHeader({}) {
 
 
 function ToHome() {
+    const router = useRouter()
+    const {group} = router.query
     return (
         <Badge color="secondary" enableShadow disableOutline isSquared css={{padding: 0}}>
             <Navbar.Link
@@ -117,7 +120,7 @@ function ToHome() {
                         fontSize: '1.3rem'
                     }}
                 >
-                    ВТ-21-1
+                    {group}
                 </Text>
 
             </Navbar.Link>
